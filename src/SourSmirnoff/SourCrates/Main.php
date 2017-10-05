@@ -19,14 +19,14 @@ class Main extends PluginBase implements Listener{
 	public function onEnable(){
 		$this->saveDefaultConfig();
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info("§aSourCrates by SourSmirnoff was loaded!");
+		$this->getLogger()->info("§Crates edited by @xoticrealms was loaded!");
 	}
 	
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
 		if(strtolower($command->getName()) == "cratekey"){
 			if($sender->hasPermission("cratekey") || $sender->hasPermission("cratekey.give")){
 				if($this->getConfig()->get("PlayerGive") == false && $sender instanceof Player){
-					$sender->sendMessage("§cYour not aloud to do that on SourServers");
+					$sender->sendMessage("§cYour not aloud to do that on NuclearFactions");
 					return true;
 				}else{
 					if(isset($args[0])){
@@ -55,7 +55,7 @@ class Main extends PluginBase implements Listener{
 					}
 				}
 			}else{
-				$sender->sendMessage("§cYour not aloud to do that on SourServers");
+				$sender->sendMessage("§cYour not aloud to do that on NuclearFactions");
 				return true;
 			}
 		}
@@ -78,10 +78,10 @@ class Main extends PluginBase implements Listener{
 						$random = explode(":",$rand[mt_rand(0, count($rand) - 1)]);
 						$player->getInventory()->addItem(Item::get($random[0], $random[1], $random[2]));
 					}
-					$player->sendMessage($prefix . "You opened the SourCrate and got rewards!");
+					$player->sendMessage($prefix . "You opened the Crate and got rewards!");
 				}else{
 					$event->setCancelled();
-					$player->sendMessage($prefix . "You need to be holding a CrateKey to get CrateChest rewards!");
+					$player->sendMessage($prefix . "You need to be holding a CrateKey to get Crate rewards!");
 				}
 			}
 		}
