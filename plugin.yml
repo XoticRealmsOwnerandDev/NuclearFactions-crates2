@@ -5,14 +5,14 @@ main: SourSmirnoff\SourCrates\Main
 author: SourSmirnoff
 commands:
     cratekey:
-        usage: "/cratekey2 <player>"
+        usage: "/cratekeyvote <player>"
         description: Gives a player a crate key
-        permission: cratekey2.give
+        permission: cratekeyvote.give
 permissions:
-    cratekey2:
+    cratekeyvote:
         default: op
         description: "Allows the player to use all of the CrateKey commands"
         children:
-            cratekey2.give:
+            cratekeyvote.give:
                 default: op
                 description: "Allows the player to give another player a CrateKey"
