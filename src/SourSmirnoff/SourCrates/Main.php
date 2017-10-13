@@ -24,9 +24,9 @@ class Main extends PluginBase implements Listener{
 	
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
 		if(strtolower($command->getName()) == "cratekey"){
-			if($sender->hasPermission("cratekey") || $sender->hasPermission("cratekey.give")){
+			if($sender->hasPermission("cratekey") || $sender->hasPermission("cratekeyvote.give")){
 				if($this->getConfig()->get("PlayerGive") == false && $sender instanceof Player){
-					$sender->sendMessage("§cYour not aloud to do that on NuclearFactions");
+					$sender->sendMessage("§cYour not aloud to do that on RevixNetwork");
 					return true;
 				}else{
 					if(isset($args[0])){
@@ -55,7 +55,7 @@ class Main extends PluginBase implements Listener{
 					}
 				}
 			}else{
-				$sender->sendMessage("§cYour not aloud to do that on NuclearFactions");
+				$sender->sendMessage("§cYour not aloud to do that on RevixNetwork");
 				return true;
 			}
 		}
